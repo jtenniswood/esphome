@@ -5,7 +5,7 @@ esp32:
   variant: esp32c6
   framework:
     type: esp-idf
-    version: "5.3.1"
+    version: 5.3.1
     platform_version: 6.9.0
     sdkconfig_options:
       CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
@@ -25,3 +25,15 @@ api:
 
 # Enable logging
 logger:
+
+# Led Lights
+light:
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: GPIO20
+    num_leds: 1
+    rmt_channel: 0
+    chipset: ws2812
+    name: "Light"
+    icon: "mdi:led-outline"
+    entity_category: diagnostic
