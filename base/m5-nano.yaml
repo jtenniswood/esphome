@@ -1,11 +1,11 @@
 # Designed for M5NanoC6
 esp32:
-  board: esp32-c6-devkitc-1
+  board: esp32-c6-devkitc-1    # use the devkit configuration which is compatible with the Nano C6
+  flash_size: 4MB             # Nano C6 typically comes with 4MB flash (adjust if yours has 8MB)
   variant: esp32c6
-  flash_size: 4MB
   framework:
     type: esp-idf
-    version: 5.3.1
+    version: "5.3.1"
     platform_version: 6.9.0
     sdkconfig_options:
       CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
