@@ -54,7 +54,7 @@ logger:
 light:
   - platform: fastled
     chipset: WS2812
-    pin: GPIO8
+    pin: GPIO20
     num_leds: 1
     rgb_order: GRB
     name: "Light"
