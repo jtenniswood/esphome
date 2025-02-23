@@ -52,10 +52,10 @@ logger:
 #    icon: "mdi:led-outline"
 #    entity_category: diagnostic
 light:
-  - platform: esp32_rmt_led_strip
+  - platform: esp32_rmt
     name: "Light"
     pin: GPIO8
     num_leds: 1
-    rgb_order: GRB   # some users have found GRB works best for the built-in LED
-    rmt_channel: 0
+    rgb_order: GRB
+    channel: 0
     chipset: WS2812
