@@ -55,11 +55,12 @@ logger:
 #    icon: "mdi:led-outline"
 #    entity_category: diagnostic
 light:
-  - platform: esp32_rmt_led_strip
-    pin: GPIO20
-    num_leds: 1
-    rgb_order: GRB
-    rmt_channel: 0
-    chipset: WS2812
+  - platform: monochromatic
+    output: led_output
     name: "Light"
     icon: "mdi:led-outline"
+
+output:
+  - platform: gpio
+    pin: GPIO20
+    id: led_output
