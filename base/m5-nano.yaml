@@ -18,11 +18,7 @@ esp32:
   flash_size: 4MB             # Nano C6 typically comes with 4MB flash (adjust if yours has 8MB)
   variant: esp32c6
   framework:
-    type: esp-idf
-    version: "5.3.1"
-    platform_version: 6.9.0
-    sdkconfig_options:
-      CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
+    type: arduino    # Changed from esp-idf to arduino
 
 # Esphome
 esphome:
