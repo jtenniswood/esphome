@@ -48,9 +48,11 @@ logger:
 #    icon: "mdi:led-outline"
 #    entity_category: diagnostic
 light:
-  - platform: neopixelbus
+  - platform: esp32_rmt_led_strip
     pin: GPIO20
     num_leds: 1
-    type: GRB
-    variant: WS2812
+    rgb_order: GRB
+    rmt_channel: 0
+    chipset: WS2812
     name: "Light"
+    icon: "mdi:led-outline"
