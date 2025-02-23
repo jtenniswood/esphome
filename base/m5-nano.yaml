@@ -5,7 +5,7 @@ esp32:
   flash_size: 4MB
   framework:
     type: esp-idf
-    version: 5.1.2
+    version: 5.3.1
     platform_version: 6.9.0
     sdkconfig_options:
       CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
