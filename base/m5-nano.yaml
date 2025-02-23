@@ -61,6 +61,7 @@ light:
     icon: "mdi:led-outline"
 
 output:
-  - platform: gpio
+  - platform: ledc
     pin: GPIO20
     id: led_output
+    frequency: 1000 Hz
