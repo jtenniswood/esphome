@@ -52,10 +52,9 @@ logger:
 #    icon: "mdi:led-outline"
 #    entity_category: diagnostic
 light:
-  - platform: esp32_rmt
-    name: "Light"
+  - platform: fastled
+    chipset: WS2812
     pin: GPIO8
     num_leds: 1
     rgb_order: GRB
-    channel: 0
-    chipset: WS2812
+    name: "Light"
