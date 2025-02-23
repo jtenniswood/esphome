@@ -10,8 +10,8 @@ esp32:
     sdkconfig_options:
       CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
 #      CONFIG_OPENTHREAD_ENABLED: n #
-      CONFIG_ENABLE_WIFI_STATION: y #
-      CONFIG_USE_MINIMAL_MDNS: y #
+#      CONFIG_ENABLE_WIFI_STATION: y #
+#      CONFIG_USE_MINIMAL_MDNS: y #
 
 # Esphome
 esphome:
