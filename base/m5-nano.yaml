@@ -52,9 +52,10 @@ logger:
 #    icon: "mdi:led-outline"
 #    entity_category: diagnostic
 light:
-  - platform: fastled
-    chipset: WS2812
+  - platform: neo_pixel
     pin: GPIO20
     num_leds: 1
     rgb_order: GRB
     name: "Light"
+    type: GRB
+    variant: WS2812
