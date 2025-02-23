@@ -12,15 +12,6 @@ esp32:
       CONFIG_OPENTHREAD_ENABLED: n #
       CONFIG_ENABLE_WIFI_STATION: y #
       CONFIG_USE_MINIMAL_MDNS: y #
-      CONFIG_ESP_SLEEP_POWER_DOWN_FLASH: n
-      CONFIG_ESP_SLEEP_GPIO_RESET_WORKAROUND: n
-      CONFIG_ESP_SLEEP_FLASH_LEAKAGE_WORKAROUND: n
-      CONFIG_ESP_SLEEP_LIGHT_ENABLE: n
-      CONFIG_ESP_SLEEP_DEEP_ENABLE: n
-      CONFIG_ESP_CONSOLE_UART: "y"
-      CONFIG_ESP_CONSOLE_UART_NUM: "0"
-      CONFIG_ESP_CONSOLE_UART_BAUDRATE: "115200"
-      CONFIG_ESP_CONSOLE_UART_DEFAULT: "y"
 
 # Esphome
 esphome:
@@ -39,13 +30,13 @@ api:
 logger:
 
 # Led Lights
-#light:
-#  - platform: esp32_rmt_led_strip
-#    rgb_order: GRB
-#    pin: GPIO20
-#    num_leds: 1
-#    rmt_channel: 0
-#    chipset: ws2812
-#    name: "Light"
-#    icon: "mdi:led-outline"
-#    entity_category: diagnostic
+light:
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: GPIO20
+    num_leds: 1
+    rmt_channel: 0
+    chipset: ws2812
+    name: "Light"
+    icon: "mdi:led-outline"
+    entity_category: diagnostic
