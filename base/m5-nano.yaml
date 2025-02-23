@@ -31,11 +31,11 @@ logger:
 
 # Led Lights
 light:
-  - platform: esp32_digital_led_strip
-    rgb_order: GRB
+  - platform: neopixelbus
+    type: GRB
     pin: GPIO20
     num_leds: 1
-    chipset: ws2812
+    variant: WS2812
     name: "Light"
     icon: "mdi:led-outline"
     entity_category: diagnostic
