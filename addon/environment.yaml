@@ -1,9 +1,12 @@
+# Data Bus
 i2c:
-  sda: 21
-  scl: 22
-  scan: true
+  - id: bus_a
+    sda: 2
+    scl: 1
+    scan: true
 
 sensor:
+# Temperature and Humidity Sensor
   - platform: sht4x
     temperature:
       name: "SHT40 Temperature"
@@ -11,6 +14,7 @@ sensor:
       name: "SHT40 Relative Humidity"
     address: 0x44
 
+# Temperature and Pressure Sensor
   - platform: bmp280_i2c
     address: 0x76
     temperature:
