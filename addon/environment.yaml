@@ -1,0 +1,20 @@
+i2c:
+  sda: 21
+  scl: 22
+  scan: true
+
+sensor:
+  - platform: sht4x
+    temperature:
+      name: "SHT40 Temperature"
+    humidity:
+      name: "SHT40 Relative Humidity"
+    address: 0x44
+
+  - platform: bmp280_i2c
+    address: 0x76
+    temperature:
+      name: "BMP280 Temperature"
+    pressure:
+      name: "BMP280 Pressure"
+    oversampling: 16x
