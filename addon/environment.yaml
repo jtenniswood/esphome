@@ -17,4 +17,3 @@ sensor:
       name: "BMP280 Temperature"
     pressure:
       name: "BMP280 Pressure"
-    oversampling: 16x
