@@ -1,10 +1,10 @@
 # Data Bus
 i2c:
   - id: bus_illuminance
-    sda: 8
-    scl: 9
+    sda: 38
+    scl: 39
     scan: true
-    frequency: 100kHz  # Try a lower frequency for better reliability
+    frequency: 100kHz  # Lower frequency for better reliability
 
 # Enable logging for I2C
 logger:
