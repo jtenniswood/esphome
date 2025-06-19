@@ -7,13 +7,6 @@ i2c:
     scl: 1
     scan: true
 
-# Data Bus
-# i2c:
-#   - id: bus_a
-#     sda: {sda_pin}
-#     scl: {scl_pin}
-#     scan: true
-
 sensor:    
 # Illuminance Sensor
   - platform: bh1750
