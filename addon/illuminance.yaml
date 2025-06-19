@@ -3,6 +3,6 @@
 sensor:    
 # Illuminance Sensor
   - platform: bh1750
-    name: "Sensor"
+    name: "Illuminance Sensor"
     address: 0x23
     update_interval: 3s

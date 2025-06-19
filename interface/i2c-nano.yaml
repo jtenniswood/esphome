@@ -1,5 +1,7 @@
 # i2c for M5 Nano
 i2c:
   - id: bus_a
-    sda: 2
-    scl: 1
+    sda: GPIO2
+    scl: GPIO1
+    scan: false # Not supported on the C6
+    frequency: 50kHz
