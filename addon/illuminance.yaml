@@ -1,25 +1,15 @@
+# M5 Atom compatible
+
 # Data Bus
 i2c:
-  - id: bus_illuminance
-    sda: 1  # G1 pin (White)
-    scl: 2  # G2 pin (Yellow)
+  - id: bus_a
+    sda: {sda_pin}
+    scl: {scl_pin}
     scan: true
-    frequency: 50kHz  # Even lower frequency for better reliability
-    setup_priority: -100  # Try a lower setup priority
-    sda_pullup_enabled: true  # Enable internal pullup on SDA
-    scl_pullup_enabled: true  # Enable internal pullup on SCL
-
-# Enable logging for I2C
-logger:
-  level: VERY_VERBOSE
-  logs:
-    sensor: DEBUG
-    i2c: DEBUG
 
 sensor:    
 # Illuminance Sensor
   - platform: bh1750
     name: "Sensor"
-    address: 0x5C  # Try alternate address
+    address: 0x23
     update_interval: 1s
-    id: illuminance_sensor
