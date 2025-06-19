@@ -3,5 +3,3 @@ i2c:
   - id: bus_a
     sda: 2
     scl: 1
-    scan: true
-    frequency: 50kHz
