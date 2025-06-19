@@ -1,9 +1,17 @@
 # Data Bus
 i2c:
-  - id: bus_a
+  - id: bus_illuminance
     sda: 8
     scl: 9
     scan: true
+    frequency: 100kHz  # Try a lower frequency for better reliability
+
+# Enable logging for I2C
+logger:
+  level: VERY_VERBOSE
+  logs:
+    sensor: DEBUG
+    i2c: DEBUG
 
 sensor:    
 # Illuminance Sensor
@@ -11,3 +19,4 @@ sensor:
     name: "Sensor"
     address: 0x23
     update_interval: 1s
+    id: illuminance_sensor
