@@ -4,7 +4,10 @@ i2c:
     sda: 1  # G1 pin (White)
     scl: 2  # G2 pin (Yellow)
     scan: true
-    frequency: 100kHz  # Lower frequency for better reliability
+    frequency: 50kHz  # Even lower frequency for better reliability
+    setup_priority: -100  # Try a lower setup priority
+    sda_pullup_enabled: true  # Enable internal pullup on SDA
+    scl_pullup_enabled: true  # Enable internal pullup on SCL
 
 # Enable logging for I2C
 logger:
@@ -17,6 +20,6 @@ sensor:
 # Illuminance Sensor
   - platform: bh1750
     name: "Sensor"
-    address: 0x23
+    address: 0x5C  # Try alternate address
     update_interval: 1s
     id: illuminance_sensor
