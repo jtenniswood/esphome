@@ -1,8 +1,8 @@
 # Data Bus
 i2c:
   - id: bus_illuminance
-    sda: 38
-    scl: 39
+    sda: 1  # G1 pin (White)
+    scl: 2  # G2 pin (Yellow)
     scan: true
     frequency: 100kHz  # Lower frequency for better reliability
 
