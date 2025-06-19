@@ -3,9 +3,16 @@
 # Data Bus
 i2c:
   - id: bus_a
-    sda: {sda_pin}
-    scl: {scl_pin}
+    sda: 2
+    scl: 1
     scan: true
+
+# Data Bus
+# i2c:
+#   - id: bus_a
+#     sda: {sda_pin}
+#     scl: {scl_pin}
+#     scan: true
 
 sensor:    
 # Illuminance Sensor
