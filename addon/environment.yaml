@@ -5,6 +5,7 @@ i2c:
     scl: 1
     scan: true
 
+
 sensor:
 # Temperature and Humidity Sensor
   - platform: sht4x
