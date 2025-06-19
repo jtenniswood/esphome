@@ -4,15 +4,34 @@ sensor:
 # Temperature and Humidity Sensor
   - platform: sht4x
     temperature:
-      name: "SHT40 Temperature"
+      name: "Temperature - SHT40"
+      id: "temperature_sht40"
     humidity:
-      name: "SHT40 Relative Humidity"
+      name: "Humidity - SHT40"
+      id: "humidity_sht40"
     address: 0x44
+    update_interval: 3s
 
 # Temperature and Pressure Sensor
   - platform: bmp280_i2c
-    address: 0x76
     temperature:
-      name: "BMP280 Temperature"
+      name: "Temperature - BMP280"
+      id: "temperature_bmp280"
+      oversampling: 16x
     pressure:
-      name: "BMP280 Pressure"
+      name: "Pressure BMP280"
+      id: "pressure_bmp280"
+    address: 0x76
+    update_interval: 3s
+
+  - platform: template
+    name: "VPD"
+    icon: "mdi:gauge"
+    id: gr2_ace_vpd
+    lambda: |-
+          return (((100 - id(humidity_sht40).state) / 100.0) * (0.6108 * exp((17.27 * id(temperature_sht40).state) / (id(temperature_sht40).state + 237.3))));
+    update_interval: 3s
+    unit_of_measurement: kPa
+    accuracy_decimals: 2
+    filters:
+      - filter_out: nan
