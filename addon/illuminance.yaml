@@ -5,4 +5,4 @@ sensor:
   - platform: bh1750
     name: "Sensor"
     address: 0x23
-    update_interval: 10s
+    update_interval: 3s
