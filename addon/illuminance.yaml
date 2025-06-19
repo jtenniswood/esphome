@@ -1,8 +1,8 @@
 # Data Bus
 i2c:
   - id: bus_a
-    sda: 2
-    scl: 1
+    sda: 8
+    scl: 9
     scan: true
 
 sensor:    
