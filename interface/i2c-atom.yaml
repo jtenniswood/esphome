@@ -1,0 +1,6 @@
+# i2c for M5 Atom
+i2c:
+  - id: bus_a
+    sda: 2
+    scl: 1
+    scan: true

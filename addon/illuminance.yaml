@@ -1,11 +1,4 @@
-# M5 Atom compatible
-
-# Data Bus
-# i2c:
-#   - id: bus_a
-#     sda: 2
-#     scl: 1
-#     scan: true
+# Requires i2c
 
 sensor:    
 # Illuminance Sensor

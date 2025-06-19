@@ -1,6 +1,0 @@
-# Wake on Lan
-button:
-  - platform: wake_on_lan
-    name: ${device1_name}
-    target_mac_address: ${device1_mac}
-    icon: mdi:power-standby
