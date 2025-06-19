@@ -1,7 +1,7 @@
 # i2c for M5 Nano
 i2c:
   - id: bus_a
-    sda: GPIO2
-    scl: GPIO1
+    sda: 2
+    scl: 1
     scan: true
-    frequency: 100kHz
+    frequency: 50kHz
