@@ -1,0 +1,6 @@
+# i2c for Xiao C3
+i2c:
+  - id: bus_a
+    sda: 9
+    scl: 10
+    scan: true
