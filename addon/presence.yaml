@@ -17,26 +17,31 @@ ld2410:
 binary_sensor:
   - platform: ld2410
     has_target:
-      name: Presence
+      name: "Presence"
       id: has_target
     has_moving_target:
-      name: Moving Target
+      name: "Moving Target"
+      id: has_moving_target
     has_still_target:
-      name: Still Target
-      
+      name: "Still Target"
+      id: has_still_target
 
 sensor:
   - platform: ld2410
     moving_distance:
-      name : Moving Distance
+      name : "Moving Distance"
+      id: moving_distance
     still_distance:
-      name: Still Distance
+      name: "Still Distance"
+      id: still_distance
     moving_energy:
-      name: Move Energy
+      name: "Move Energy"
+      id: moving_energy
     still_energy:
-      name: Still Energy
+      name: "Still Energy"
+      id: still_energy
     detection_distance:
-      name: Detection Distance
+      name: "Detection Distance"
       id: detection_distance
 
 
@@ -44,8 +49,10 @@ switch:
   - platform: ld2410
     bluetooth:
       name: "Bluetooth"
+      id: bluetooth
     engineering_mode:
       name: "Engineering Mode"
+      id: engineering_mode
 
 
 number:
@@ -53,61 +60,83 @@ number:
     g0:
       move_threshold:
         name: "G0 Move Threshold"
+        id: g0_move_threshold
       still_threshold:
         name: "G0 Still Threshold"
+        id: g0_still_threshold
     g1:
       move_threshold:
-        name: G1 Move Threshold
+        name: "G1 Move Threshold"
+        id: g1_move_threshold
       still_threshold:
-        name: G1 Still Threshold
+        name: "G1 Still Threshold"
+        id: g1_still_threshold
     g2:
       move_threshold:
-        name: G2 Move Threshold
+        name: "G2 Move Threshold"
+        id: g2_move_threshold
       still_threshold:
-        name: G2 Still Threshold
+        name: "G2 Still Threshold"
+        id: g2_still_threshold
     g3:
       move_threshold:
-        name: G3 Move Threshold
+        name: "G3 Move Threshold"
+        id: g3_move_threshold
       still_threshold:
-        name: G3 Still Threshold
+        name: "G3 Still Threshold"
+        id: g3_still_threshold
     g4:
       move_threshold:
-        name: G4 Move Threshold
+        name: "G4 Move Threshold"
+        id: g4_move_threshold
       still_threshold:
-        name: G4 Still Threshold
+        name: "G4 Still Threshold"
+        id: g4_still_threshold
     g5:
       move_threshold:
-        name: G5 Move Threshold
+        name: "G5 Move Threshold"
+        id: g5_move_threshold
       still_threshold:
-        name: G5 Still Threshold
+        name: "G5 Still Threshold"
+        id: g5_still_threshold
     g6:
       move_threshold:
-        name: G6 Move Threshold
+        name: "G6 Move Threshold"
+        id: g6_move_threshold
       still_threshold:
-        name: G6 Still Threshold
+        name: "G6 Still Threshold"
+        id: g6_still_threshold
     g7:
       move_threshold:
-        name: G7 Move Threshold
+        name: "G7 Move Threshold"
+        id: g7_move_threshold
       still_threshold:
-        name: G7 Still Threshold
+        name: "G7 Still Threshold"
+        id: g7_still_threshold
     g8:
       move_threshold:
-        name: G8 Move Threshold
+        name: "G8 Move Threshold"
+        id: g8_move_threshold
       still_threshold:
-        name: G8 Still Threshold
+        name: "G8 Still Threshold"
+        id: g8_still_threshold
 
 
 button:
   - platform: ld2410
     factory_reset:
-      name: Factory Reset
+      name: "Factory Reset"
+      id: factory_reset
     restart:
-      name: Restart Sensor
+      name: "Restart Sensor"
+      id: restart
     query_params:
-      name: Query Settings
+      name: "Query Settings"
+      id: query_params
 
 
 select:
   - platform: ld2410
     distance_resolution:
-      name: Distance Resolution
+      name: "Distance Resolution"
+      id: distance_resolution
