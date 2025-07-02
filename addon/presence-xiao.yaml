@@ -9,8 +9,7 @@ uart:
 
 
 ld2410:
-  id: my_ld2410
-  uart_id: UART2
+  id: ld2410_radar
 
 
 binary_sensor:
