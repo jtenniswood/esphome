@@ -1,9 +1,0 @@
-# Requires i2c
-
-sensor:
-# Time Of Flight Sensor
-  - platform: vl53l0x
-    name: "VL53L0X Distance"
-    address: 0x29
-    update_interval: 1s
-    long_range: true  # Optional, enables longer range mode

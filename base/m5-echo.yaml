@@ -1,0 +1,21 @@
+# Designed for M5AtomS3 Echo
+esp32:
+  board: m5stack-atom
+  framework:
+    type: esp-idf
+
+# Esphome
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  area: ${room}
+
+# Over the Air Updates
+ota:
+- platform: esphome
+
+# Enable Home Assistant API
+api:
+
+# Enable logging
+logger:
