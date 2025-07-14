@@ -1,15 +1,27 @@
 # I2S Audio configuration for ATOM Echo
 i2s_audio:
-  - i2s_lrclk_pin: GPIO33
+  - id: i2s_audio_bus
+    i2s_lrclk_pin: GPIO33
     i2s_bclk_pin: GPIO19
     i2s_mclk_pin: GPIO0
+
+# Audio ADC configuration for external microphone
+audio_adc:
+  - id: adc
+    i2s_audio_id: i2s_audio_bus
+    i2s_din_pin: GPIO23
+
+# Audio DAC configuration for external speaker
+audio_dac:
+  - id: dac
+    i2s_audio_id: i2s_audio_bus
+    i2s_dout_pin: GPIO22
 
 # Microphone configuration
 microphone:
   - platform: i2s_audio
     id: echo_microphone
-    i2s_din_pin: GPIO23
-    adc_type: external
+    adc: adc
     pdm: true
     channel: left
     sample_rate: 16000
@@ -19,8 +31,7 @@ microphone:
 speaker:
   - platform: i2s_audio
     id: echo_speaker
-    i2s_dout_pin: GPIO22
-    dac_type: external
+    dac: dac
     sample_rate: 16000
     bits_per_sample: 16bit
     channel: mono
@@ -34,7 +45,7 @@ voice_assistant:
   noise_suppression_level: 2
   auto_gain: 31dBFS
   volume_multiplier: 2.0
-  vad_threshold: 3
+  silence_detection: true
   on_listening:
     - light.turn_on:
         id: led
@@ -72,8 +83,8 @@ voice_assistant:
         red: 100%
         green: 0%
         brightness: 100%
-        effect: none
-    - delay: 1s
+        effect: strobe
+    - delay: 2s
     - script.execute: reset_led
   on_client_connected:
     - if:
@@ -140,6 +151,19 @@ light:
       - pulse:
           transition_length: 250ms
           update_interval: 250ms
+      - strobe:
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 0%
+              blue: 0%
+              duration: 250ms
+            - state: false
+              duration: 250ms
+      - rainbow:
+          speed: 10
+          width: 50
 
 # Switches
 switch:
@@ -168,6 +192,10 @@ button:
   - platform: factory_reset
     id: factory_reset_btn
     name: "Factory reset"
+    
+  - platform: restart
+    name: "Restart"
+    entity_category: diagnostic
 
 # Scripts
 script:
