@@ -8,6 +8,6 @@ binary_sensor:
         pullup: false
     name: "Motion Sensor"
     device_class: motion
-#    filters:
-#      - delayed_on: 10ms
-#      - delayed_off: 2s
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 2s
