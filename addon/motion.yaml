@@ -6,9 +6,8 @@ binary_sensor:
       mode:
         input: true
         pullup: false
-    name: "PIR Motion Sensor"
+    name: "Motion Sensor"
     device_class: motion
-    filters:
-      # Debounce to prevent false triggers
-      - delayed_on: 10ms
-      - delayed_off: 2s
+#    filters:
+#      - delayed_on: 10ms
+#      - delayed_off: 2s
