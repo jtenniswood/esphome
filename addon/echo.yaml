@@ -7,7 +7,8 @@ i2s_audio:
 
 # Audio ADC configuration for external microphone
 audio_adc:
-  - id: adc
+  - platform: i2s_audio
+    id: adc
     i2s_audio_id: i2s_audio_bus
     i2s_din_pin: GPIO23
 
