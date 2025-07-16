@@ -1,0 +1,14 @@
+# PIR Motion Sensor
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: GPIO2
+      mode:
+        input: true
+        pullup: false
+    name: "PIR Motion Sensor"
+    device_class: motion
+    filters:
+      # Debounce to prevent false triggers
+      - delayed_on: 10ms
+      - delayed_off: 2s
