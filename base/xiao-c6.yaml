@@ -1,0 +1,22 @@
+# Designed for Xiao C6
+esp32:
+  board: seeed_xiao_esp32c6
+  framework:
+    type: esp-idf
+    version: recommended
+
+# Esphome
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  area: ${room}
+
+# Over the Air Updates
+ota:
+- platform: esphome
+
+# Enable Home Assistant API
+api:
+
+# Enable logging
+logger:
