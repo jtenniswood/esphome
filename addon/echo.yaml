@@ -5,13 +5,6 @@ i2s_audio:
     i2s_bclk_pin: GPIO19
     i2s_mclk_pin: GPIO0
 
-# Audio ADC configuration for external microphone
-audio_adc:
-  - platform: i2s_audio
-    id: adc
-    i2s_audio_id: i2s_audio_bus
-    i2s_din_pin: GPIO23
-
 # Audio DAC configuration for external speaker
 audio_dac:
   - id: dac
@@ -22,7 +15,9 @@ audio_dac:
 microphone:
   - platform: i2s_audio
     id: echo_microphone
-    adc: adc
+    i2s_audio_id: i2s_audio_bus
+    i2s_din_pin: GPIO23
+    adc_type: external
     pdm: true
     channel: left
     sample_rate: 16000
