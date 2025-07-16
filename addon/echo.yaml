@@ -7,7 +7,8 @@ i2s_audio:
 
 # Audio DAC configuration for external speaker
 audio_dac:
-  - id: dac
+  - platform: i2s_audio
+    id: dac
     i2s_audio_id: i2s_audio_bus
     i2s_dout_pin: GPIO22
 
