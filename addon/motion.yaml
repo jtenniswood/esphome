@@ -14,11 +14,3 @@ binary_sensor:
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
-
-# Diagnostic sensor to see raw GPIO state
-sensor:
-  - platform: template
-    name: "PIR Pin Raw Value"
-    lambda: |-
-      return digitalRead(2);  # GPIO2
-    update_interval: 1s
