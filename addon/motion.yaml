@@ -3,6 +3,7 @@ binary_sensor:
   - platform: gpio
     pin:
       number: GPIO2
+      inverted: true
       mode:
         input: true
         pullup: false
@@ -10,7 +11,6 @@ binary_sensor:
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
-    inverted: true
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
