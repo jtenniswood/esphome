@@ -2,7 +2,7 @@
 binary_sensor:
   - platform: gpio
     pin:
-      number: GPIO5  # Try GPIO5 instead of GPIO4
+      number: GPIO2  # Using GPIO2 from Grove connector
       mode:
         input: true
         pullup: false
@@ -10,7 +10,7 @@ binary_sensor:
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
-    # inverted: true  # Uncomment if sensor logic is reversed
+    inverted: true  # Enable inverted logic for Grove PIR sensors
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
@@ -20,5 +20,5 @@ sensor:
   - platform: template
     name: "PIR Pin Raw Value"
     lambda: |-
-      return digitalRead(5);  # GPIO5
+      return digitalRead(2);  # GPIO2
     update_interval: 1s
