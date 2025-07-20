@@ -2,15 +2,15 @@
 binary_sensor:
   - platform: gpio
     pin:
-      number: GPIO2  # Using GPIO2 from Grove connector
+      number: GPIO2
       mode:
         input: true
         pullup: false
-        pulldown: true  # Enable pulldown to stabilize the pin
+        pulldown: true
+      inverted: true  # Move inverted to pin level
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
-    inverted: true  # Enable inverted logic for Grove PIR sensors
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
