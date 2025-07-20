@@ -4,5 +4,3 @@ binary_sensor:
     pin: GPIO1
     name: "PIR Motion Sensor"
     device_class: motion
-    filters:
-      - delayed_off: 2s  # Account for the 2-second delay mentioned in specs
