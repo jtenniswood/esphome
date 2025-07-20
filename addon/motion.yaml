@@ -1,6 +1,16 @@
+# PIR Motion Sensor
 binary_sensor:
   - platform: gpio
-    pin: G17
+    pin:
+      number: GPIO4
+      mode:
+        input: true
+        pullup: false
+        # Uncomment if sensor stays "on": pulldown: true
+        # Uncomment if sensor logic is inverted: inverted: true
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
+    filters:
+      - delayed_on: 10ms
+      - delayed_off: 2s
