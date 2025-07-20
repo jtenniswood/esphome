@@ -1,0 +1,23 @@
+# M5Stack Atom S3 with illuminance and environment sensors
+substitutions:
+  name: "0000"
+  friendly_name: "Room Sensor (0000)"
+  room: "Room"
+
+# Wifi Setup
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Packages
+packages:
+  setup:
+    url: https://github.com/jtenniswood/esphome/
+    files: [base/m5-atom.yaml,
+            interface/i2c-atom.yaml,
+            addon/bluetooth.yaml,
+            addon/illuminance.yaml,
+            addon/environment.yaml,            
+            addon/network.yaml,
+            addon/webserver.yaml]
+    refresh: 1sec

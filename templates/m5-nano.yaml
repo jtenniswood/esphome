@@ -1,0 +1,20 @@
+# M5Stack Nano C6 with motion sensor
+substitutions:
+  name: "0000"
+  friendly_name: "Room Sensor (0000)"
+  room: "Room"
+
+# Wifi Setup
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# Packages
+packages:
+  setup:
+    url: https://github.com/jtenniswood/esphome/
+    files: [base/m5-nano.yaml,
+            addon/motion.yaml,
+            addon/network.yaml,
+            addon/webserver.yaml]
+    refresh: 1sec
