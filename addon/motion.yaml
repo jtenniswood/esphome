@@ -7,10 +7,10 @@ binary_sensor:
         input: true
         pullup: false
         pulldown: true
-      inverted: true  # Move inverted to pin level
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
+    inverted: true
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
