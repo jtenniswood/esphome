@@ -1,6 +1,31 @@
 # PIR Motion Sensor
 binary_sensor:
   - platform: gpio
-    pin: GPIO1
+    pin: 
+      number: GPIO1
+      mode:
+        input: true
+        pullup: true  # Ensures stable readings
     name: "PIR Motion Sensor"
     device_class: motion
+    # Interrupt optimization for fastest response
+    use_interrupt: true  # Default, but explicit for performance
+    interrupt_type: ANY   # Detect both rising and falling edges for fastest response
+    # Optional: Remove any implicit delays
+    filters:
+      - delayed_on: 10ms   # Minimal debounce to prevent false triggers
+      - delayed_off: 100ms # Quick off detection while preventing flutter
+
+# Alternative ultra-fast configuration (uncomment and replace above if needed):
+# binary_sensor:
+#   - platform: gpio
+#     pin: 
+#       number: GPIO1
+#       mode:
+#         input: true
+#         pullup: true
+#     name: "PIR Motion Sensor"
+#     device_class: motion
+#     use_interrupt: true
+#     interrupt_type: RISING  # Only detect motion start for fastest initial response
+#     # No filters for absolute minimum delay - use only if sensor is very stable
