@@ -2,15 +2,23 @@
 binary_sensor:
   - platform: gpio
     pin:
-      number: GPIO4
+      number: GPIO5  # Try GPIO5 instead of GPIO4
       mode:
         input: true
         pullup: false
-        # Uncomment if sensor stays "on": pulldown: true
-        # Uncomment if sensor logic is inverted: inverted: true
+        pulldown: true  # Enable pulldown to stabilize the pin
     name: "PIR Sensor1"
     id: pir_sensor1
     device_class: motion
+    # inverted: true  # Uncomment if sensor logic is reversed
     filters:
       - delayed_on: 10ms
       - delayed_off: 2s
+
+# Diagnostic sensor to see raw GPIO state
+sensor:
+  - platform: template
+    name: "PIR Pin Raw Value"
+    lambda: |-
+      return digitalRead(5);  # GPIO5
+    update_interval: 1s
