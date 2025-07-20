@@ -1,12 +1,6 @@
 # PIR Motion Sensor
 binary_sensor:
   - platform: gpio
-    pin: 
-      number: GPIO1
-      mode:
-        input: true
-        pullup: true
+    pin: GPIO1
     name: "PIR Motion Sensor"
     device_class: motion
-    use_interrupt: true
-    interrupt_type: RISING  # Only detect motion start for fastest initial response
