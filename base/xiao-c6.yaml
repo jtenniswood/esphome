@@ -12,6 +12,7 @@ esphome:
   area: ${room}
   project:
     name: ${project}
+    version: ${version}
 
 # Over the Air Updates
 ota:
