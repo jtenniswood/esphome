@@ -9,6 +9,9 @@ esphome:
   name: ${name}
   friendly_name: ${friendly_name}
   area: ${room}
+  project:
+    name: ${project}
+    version: ${version}
 
 # Over the Air Updates
 ota:
