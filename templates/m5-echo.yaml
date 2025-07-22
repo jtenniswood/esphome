@@ -1,9 +1,9 @@
 # M5Stack Atom S3 with illuminance and environment sensors
 substitutions:
-  name: "0000"
-  friendly_name: "Room Sensor (0000)"
-  room: "Room"
-  project: "M5stack.Atom"
+  name: "48a8"
+  friendly_name: "Echo (48a8)"
+  room: "Home"
+  project: "M5stack.Echo"
   version: "2025.06"
 
 # Wifi Setup
@@ -15,11 +15,8 @@ wifi:
 packages:
   setup:
     url: https://github.com/jtenniswood/esphome/
-    files: [base/m5-atom.yaml,
-            interface/i2c-atom.yaml,
-            addon/bluetooth.yaml,
-            addon/illuminance.yaml,
-            addon/environment.yaml,            
+    files: [base/m5-echo.yaml,
+            addon/echo.yaml,
             addon/network.yaml,
             addon/webserver.yaml]
     refresh: 1sec

@@ -2,7 +2,7 @@
 esp32:
   board: m5stack-atom
   framework:
-    type: esp-idf
+    type: arduino
 
 # Esphome
 esphome:
