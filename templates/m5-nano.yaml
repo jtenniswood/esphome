@@ -3,8 +3,8 @@ substitutions:
   name: "0000"
   friendly_name: "Room Sensor (0000)"
   room: "Room"
-  project: "Seeedstudio.Xiao C6"
-  version: "2025.06"
+  project: "Seeed Studio.Xiao C6"
+  version: "2025"
 
 # Wifi Setup
 wifi:

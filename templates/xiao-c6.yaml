@@ -3,6 +3,8 @@ substitutions:
   name: "0000"
   friendly_name: "Room Sensor (0000)"
   room: "Room"
+  project: "Seeed Studio.Xiao C6"
+  version: "2025"
 
 # Presence Sensor
   rx_pin: "GPIO2"

@@ -3,8 +3,8 @@ substitutions:
   name: "48a8"
   friendly_name: "Echo (48a8)"
   room: "Home"
-  project: "M5stack.Echo"
-  version: "2025.06"
+  project: "M5 Stack.Echo D3"
+  version: "2025"
 
 # Wifi Setup
 wifi:
