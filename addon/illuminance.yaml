@@ -9,3 +9,7 @@ sensor:
     name: "Illuminance Sensor"
     address: 0x23
     update_interval: ${update_interval}
+    accuracy_decimals: 0
+    filters:
+      - delta: 5.0  # Only send if value changes by 5 lx or more
+      - heartbeat: 300s  # Send at least every 300s even if no change
