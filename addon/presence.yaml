@@ -1,5 +1,10 @@
 # Configuration for the 24GHz mmwave XIAO Radar
-  
+
+# Add this to the esphome config under substitutions to set the pins for the sensor, check the pinout of your board.
+# This is set for the XIAO ESP32-S3 with XIAO Presence Sensor.
+#  rx_pin: "GPIO2"
+#  tx_pin: "GPIO21"
+
 uart:
   tx_pin: ${tx_pin}
   rx_pin: ${rx_pin}
