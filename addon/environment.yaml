@@ -7,39 +7,22 @@ sensor:
 # Temperature and Humidity Sensor
   - platform: sht4x
     temperature:
-      name: "Temperature (SHT40)"
+      name: "Temperature"
       id: "temperature_sht40"
       accuracy_decimals: 1
-      filters:
-        - delta: 0.5  # Only send if temperature changes by 0.5°C or more
-        - heartbeat: 180s
     humidity:
-      name: "Humidity (SHT40)"
+      name: "Humidity"
       id: "humidity_sht40"
       accuracy_decimals: 0
-      filters:
-        - delta: 2.0  # Only send if humidity changes by 2% or more
-        - heartbeat: 180s
     address: 0x44
     update_interval: ${update_interval}
 
 # Temperature and Pressure Sensor
   - platform: bmp280_i2c
-    temperature:
-      name: "Temperature (BMP280)"
-      id: "temperature_bmp280"
-      oversampling: 16x
-      accuracy_decimals: 1
-      filters:
-        - delta: 0.2  # Only send if temperature changes by 0.2°C or more
-        - heartbeat: 180s
     pressure:
-      name: "Pressure BMP280"
+      name: "Pressure"
       id: "pressure_bmp280"
       accuracy_decimals: 0
-      filters:
-        - delta: 1.0  # Only send if pressure changes by 1 hPa or more
-        - heartbeat: 180s
     address: 0x76
     update_interval: ${update_interval}
 
