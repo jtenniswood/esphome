@@ -1,11 +1,11 @@
 # Requires i2c
 
 # Add this to the esphome config under substitutions to set the update interval for the sensor.
-#  illuminance_update_interval: 60s
+#  update_interval: 60s
 
 sensor:    
 # Illuminance Sensor
   - platform: bh1750
     name: "Illuminance Sensor"
     address: 0x23
-    update_interval: ${illuminance_update_interval}
+    update_interval: ${update_interval}

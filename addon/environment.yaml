@@ -10,7 +10,7 @@ sensor:
       name: "Humidity - SHT40"
       id: "humidity_sht40"
     address: 0x44
-    update_interval: 3s
+    update_interval: ${update_interval}
 
 # Temperature and Pressure Sensor
   - platform: bmp280_i2c
@@ -22,7 +22,7 @@ sensor:
       name: "Pressure BMP280"
       id: "pressure_bmp280"
     address: 0x76
-    update_interval: 3s
+    update_interval: ${update_interval}
 
   - platform: template
     name: "VPD"
