@@ -6,7 +6,7 @@
 sensor:    
 # Illuminance Sensor
   - platform: bh1750
-    name: "Illuminance Sensor"
+    name: "Illuminance"
     address: 0x23
     update_interval: ${update_interval}
     accuracy_decimals: 0
