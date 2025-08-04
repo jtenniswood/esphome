@@ -12,15 +12,6 @@ esphome:
     name: ${project}
     version: ${version}
 
-# Devices
-devices:
-  - id: ${room_id1}
-    name: ${room_name1}
-    area_id: ${area_id1}
-  - id: ${room_id2}
-    name: ${room_name2}
-    area_id: ${area_id2}
-
 # Over the Air Updates
 ota:
 - platform: esphome
