@@ -1,0 +1,48 @@
+# Requires i2c
+
+# Add this to the esphome config under substitutions to set the update interval for the sensor.
+#  update_interval: 60s
+#  temperature_sht40_room: "Room"
+#  humidity_sht40_room: "Room"
+#  pressure_bmp280_room: "Room"
+#  gr2_ace_vpd_room: "Room"
+
+sensor:
+# Temperature and Humidity Sensor
+  - platform: sht4x
+    temperature:
+      name: "Temperature"
+      id: "temperature_sht40"
+      accuracy_decimals: 1
+    humidity:
+      name: "Humidity"
+      id: "humidity_sht40"
+      accuracy_decimals: 0
+    address: 0x44
+    update_interval: ${update_interval}
+    device_id: ${temperature_sht40_room}
+
+# Temperature and Pressure Sensor
+  - platform: bmp280_i2c
+    pressure:
+      name: "Pressure"
+      id: "pressure_bmp280"
+      accuracy_decimals: 0
+    address: 0x76
+    update_interval: ${update_interval}
+    device_id: ${pressure_bmp280_room}
+
+  - platform: template
+    name: "VPD"
+    icon: "mdi:gauge"
+    id: gr2_ace_vpd
+    lambda: |-
+          return (((100 - id(humidity_sht40).state) / 100.0) * (0.6108 * exp((17.27 * id(temperature_sht40).state) / (id(temperature_sht40).state + 237.3))));
+    unit_of_measurement: kPa
+    accuracy_decimals: 2
+    filters:
+      - filter_out: nan
+      - delta: 0.1  # Only send if VPD changes by 0.1 kPa or more
+      - heartbeat: 180s
+    update_interval: ${update_interval}
+    device_id: ${gr2_ace_vpd_room}

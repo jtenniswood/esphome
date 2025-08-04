@@ -1,0 +1,39 @@
+# Designed for M5NanoC6
+esp32:
+  board: esp32-c6-devkitc-1
+  framework:
+    type: esp-idf
+
+# Esphome
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+  project:
+    name: ${project}
+    version: ${version}
+
+# Areas
+areas:
+  - id: ${room_id1}
+    name: ${room_name1}
+  - id: ${room_id2}
+    name: ${room_name2}
+
+# Devices
+devices:
+  - id: ${room_id1}
+    name: ${room_name1}
+    area_id: ${area_id1}
+  - id: ${room_id2}
+    name: ${room_name2}
+    area_id: ${area_id2}
+
+# Over the Air Updates
+ota:
+- platform: esphome
+
+# Enable Home Assistant API
+api:
+
+# Enable logging
+logger:
