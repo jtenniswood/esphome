@@ -12,13 +12,6 @@ esphome:
     name: ${project}
     version: ${version}
 
-# Areas
-areas:
-  - id: ${room_id1}
-    name: ${room_name1}
-  - id: ${room_id2}
-    name: ${room_name2}
-
 # Devices
 devices:
   - id: ${room_id1}
